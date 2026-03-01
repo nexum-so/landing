@@ -10,7 +10,7 @@ FROM base AS build
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN pnpm build
+RUN mkdir -p public && pnpm build
 
 FROM base AS runner
 WORKDIR /app
