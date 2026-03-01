@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: "Nexum — The Trust Layer for AI Agents",
   description:
     "On-chain identity, discovery, payments, and reputation for AI agents on Solana.",
+  keywords: [
+    "AI agents",
+    "Solana",
+    "x402",
+    "agent payments",
+    "agent discovery",
+    "on-chain reputation",
+    "A2A protocol",
+    "machine-to-machine payments",
+  ],
+  authors: [{ name: "Nexum" }],
+  creator: "Nexum",
   openGraph: {
     title: "Nexum — The Trust Layer for AI Agents",
     description:
@@ -13,10 +25,18 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://nexum.so",
     siteName: "Nexum",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nexum — The Trust Layer for AI Agents",
+    description:
+      "On-chain identity, discovery, payments, and reputation for AI agents on Solana.",
+    creator: "@nexum_so",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
