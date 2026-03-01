@@ -16,35 +16,55 @@ export default function TwitterImage() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          background: "#0A0A0A",
+          backgroundColor: "#0A0A0A",
+          backgroundImage:
+            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(242, 153, 74, 0.14) 0%, transparent 70%), " +
+            "radial-gradient(ellipse 60% 50% at 20% 80%, rgba(242, 153, 74, 0.08) 0%, transparent 60%), " +
+            "radial-gradient(ellipse 40% 40% at 80% 20%, rgba(242, 153, 74, 0.06) 0%, transparent 50%)",
           fontFamily: "system-ui, sans-serif",
           position: "relative",
           overflow: "hidden",
         }}
       >
-        {/* Gradient orbs */}
+        {/* Grid lines */}
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div
+            key={`v${i}`}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: `${(i + 1) * (1200 / 13)}px`,
+              width: "1px",
+              height: "100%",
+              background: "rgba(255, 255, 255, 0.025)",
+            }}
+          />
+        ))}
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div
+            key={`h${i}`}
+            style={{
+              position: "absolute",
+              top: `${(i + 1) * (630 / 7)}px`,
+              left: 0,
+              width: "100%",
+              height: "1px",
+              background: "rgba(255, 255, 255, 0.025)",
+            }}
+          />
+        ))}
+
+        {/* Accent line top */}
         <div
           style={{
             position: "absolute",
-            top: "-100px",
-            left: "-100px",
-            width: "500px",
-            height: "500px",
-            borderRadius: "50%",
-            background: "rgba(242, 153, 74, 0.12)",
-            filter: "blur(100px)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-100px",
-            right: "-100px",
+            top: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
             width: "400px",
-            height: "400px",
-            borderRadius: "50%",
-            background: "rgba(242, 153, 74, 0.08)",
-            filter: "blur(100px)",
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent, rgba(242, 153, 74, 0.5), transparent)",
           }}
         />
 
@@ -128,7 +148,7 @@ export default function TwitterImage() {
         <div
           style={{
             display: "flex",
-            gap: "16px",
+            gap: "12px",
             marginTop: "36px",
           }}
         >
@@ -138,8 +158,8 @@ export default function TwitterImage() {
               style={{
                 padding: "8px 20px",
                 borderRadius: "8px",
-                border: "1px solid #2A2A2A",
-                background: "#161616",
+                border: "1px solid rgba(242, 153, 74, 0.2)",
+                background: "rgba(242, 153, 74, 0.06)",
                 color: "#A1A1A1",
                 fontSize: "16px",
               }}
@@ -153,13 +173,13 @@ export default function TwitterImage() {
         <div
           style={{
             position: "absolute",
-            bottom: "40px",
+            bottom: "36px",
             display: "flex",
             gap: "24px",
             alignItems: "center",
           }}
         >
-          <span style={{ fontSize: "16px", color: "#6B6B6B" }}>nexum.so</span>
+          <span style={{ fontSize: "15px", color: "#6B6B6B" }}>Built on Solana</span>
           <div
             style={{
               width: "4px",
@@ -168,8 +188,31 @@ export default function TwitterImage() {
               background: "#F2994A",
             }}
           />
-          <span style={{ fontSize: "16px", color: "#6B6B6B" }}>@nexum_so</span>
+          <span style={{ fontSize: "15px", color: "#6B6B6B" }}>nexum.so</span>
+          <div
+            style={{
+              width: "4px",
+              height: "4px",
+              borderRadius: "50%",
+              background: "#F2994A",
+            }}
+          />
+          <span style={{ fontSize: "15px", color: "#6B6B6B" }}>@nexum_so</span>
         </div>
+
+        {/* Accent line bottom */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "600px",
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent, rgba(242, 153, 74, 0.3), transparent)",
+          }}
+        />
       </div>
     ),
     { ...size }
